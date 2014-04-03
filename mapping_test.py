@@ -90,7 +90,7 @@ def streamline_mapping_new_step(streamlines, voxel_size=None, affine=None,
            else:
              mapping[point] = [i]
              flag=1
-       
+        #Add the ids of streamline which has no crossing
         if flag==1: 
              i=np.array([i])
              idx.extend(i)
