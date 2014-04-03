@@ -1,0 +1,20 @@
+1. Read the whole track form .trk file(original space not voxel cordinate)
+2. Calculating the length of all streamline (according the dipy function)
+3.  Filter the streamline(with the length less than 10)
+4.  then we have a modified tracktography with ~200k streamlines
+5. Now for the check of crossing
+     
+    Next step: (checking the crossing)
+1. take an empty dictionary
+2. take one streamline form 200k streamlines
+3. Find the list of voxel, it goes through
+             check if the voxel of that streamline is already in the dictionary then 
+                   break (not take that) 
+             otherwise
+                    add  those voxel in a dictinary
+                    add the id of the streamline
+
+   
+     Form the whole procedure , ~1500 streamline found And then  use the FFT
+   
+  
