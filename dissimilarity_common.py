@@ -94,13 +94,12 @@ def compute_correlation(data, distance, prototype_policies, num_prototypes, iter
     lengths = list(length(data_original)) 
     lengths=np.array(lengths)
     
-    l=np.where(lengths>10)[0]
-
-    data_original=data_original[l]
-
-    a= streamline_mapping_new_step(data_original, affine=affine)
-    tracks_subsample=data_original[a] 
-
+    temp=np.where(lengths>10)[0]
+    l=np.argsort(lengths)[::-1][:len(temp)]
+    data_original_temp=data_original[l]
+    a= streamline_mapping_new_step(data_original_temp, affine=affine)
+    tracks_subsample=data_original_temp[a]
+    
     print len(tracks_subsample)
    
     """
